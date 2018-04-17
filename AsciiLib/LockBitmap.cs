@@ -7,7 +7,7 @@ namespace AsciiLib {
     // Necessary attribution to coding of 'LockBitmap':
     // Author: Vano Maisuradze,
     // Link: https://www.codeproject.com/Tips/240428/Work-with-bitmap-faster-with-Csharp
-    class LockBitmap {
+    public class LockBitmap {
         Bitmap source = null;
         IntPtr Iptr = IntPtr.Zero;
         BitmapData bitmapData = null;
