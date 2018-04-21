@@ -7,6 +7,16 @@ using System.Threading.Tasks;
 
 namespace AsciiLib.Images {
     public class AsciiImageConverter {
+        private static double ratio(Bitmap b){
+            return b.Width / b.Height;
+        }
+        public static Bitmap ResizeOutput(Bitmap original, Bitmap input) {
+            double r = ratio(original);
+
+            int w = (int)(input.Height * r);
+
+            return new Bitmap(input, new Size(w, input.Height));
+        }
         public static string CreateAscii(Bitmap input, Font f, List<char> chars,
             int tolerance = 100, int channels = 4) {
             // Get all the colour values for every char in the list.
